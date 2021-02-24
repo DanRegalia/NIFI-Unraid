@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Date>2021-02-24</Date>
+  <Beta>False</Beta>
+  <Category>Docker:</Category>
+  <Name>Apache NIFI</Name>
+  <Project>https://nifi.apache.org/</Project>
+  <Changes>
+[center][img width='155px' src='https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png'][/center]
+
+[font size=3]2021.02.24[/font]
+- Initial Release
+  </Changes>
+  <Overview>
+    Apache NiFi supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic.
+  </Overview>
+  <Description>
+   Apache NiFi supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic.
+  </Description>
+  <Registry>https://hub.docker.com/r/apache/nifi/</Registry>
+  <GitHub>https://github.com/DanRegalia/NIFI-Unraid</GitHub>
+  <Repository>apache/nifi</Repository>
+  <Support>https://forums.unraid.net/topic/99880-support-portainer-ce/</Support>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>9080</HostPort>
+        <ContainerPort>9080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/nifi</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/var/run/docker.sock</HostDir>
+      <ContainerDir>/var/run/docker.sock</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:9080]/</WebUI>
+  <Icon>https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png</Icon>
+
+  <Network Default="bridge">bridge</Network>
+
+  <Config Type="Port" Name="Web Interface Port" Target="9080" Default="9080" Mode="tcp" Display="always-visible" Required="true"
+       Description="This is NIFIs Web UI port you can access via a web browser.">9080</Config>
+
+  <Config Type="Path" Name="Config Storage Path" Target="/data" Default="/mnt/user/appdata/nifi" Mode="rw" Display="always-visible" Required="true"
+       Description="This is where NIFI will store its databases and configuration.">/mnt/user/appdata/nifi</Config>
+
+  <Config Type="Path" Name="Docker Socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw" Display="advanced-hide" Required="true"
+       Description="This is needed for NIFI to connect to Docker.">/var/run/docker.sock</Config>
+
+</Container>
