@@ -20,7 +20,7 @@
   <Registry>https://hub.docker.com/r/apache/nifi/</Registry>
   <GitHub>https://github.com/DanRegalia/NIFI-Unraid</GitHub>
   <Repository>apache/nifi</Repository>
-  <Support>https://forums.unraid.net/topic/99880-support-portainer-ce/</Support>
+  <Support>https://forums.unraid.net/topic/103150-support-apache-nifi/</Support>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
   <Environment/>
